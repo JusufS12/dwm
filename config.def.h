@@ -20,10 +20,11 @@ static const char dmenufont[]       = "CaskaydiaCove NF:style=Regular:size=10";
 // };
 
 #include "catppuccin.h"
+static const char accent[] = "#b4befe";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { foreground, bg_alt, background },
-	[SchemeSel]  = { foreground, blue, blue },
+	[SchemeSel]  = { bg_alt, accent, accent },
 };
 
 /* tagging */
@@ -66,7 +67,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 // static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_alt, "-nf", foreground, "-sb", blue, "-sf", foreground, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_alt, "-nf", foreground, "-sb", accent, "-sf", bg_alt, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
